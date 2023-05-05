@@ -17,13 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="74dp"
             app:srcCompat="@drawable/car200" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
             android:text="Avtošola Piči Miki"
             android:textAlignment="center"
-            android:textSize="20dp">
-        </TextView>
+            android:textSize="20dp"></TextView>
 
         <EditText
             android:id="@+id/username"

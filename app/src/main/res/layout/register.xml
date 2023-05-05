@@ -31,61 +31,69 @@
 
             <EditText
                 android:id="@+id/first_name"
-                android:inputType="text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
                 android:width="20dp"
-                android:hint="Ime"
-                android:minWidth="100sp"
-                tools:ignore="Autofill,HardcodedText"
                 android:autofillHints="name"
-                android:layout_marginEnd="20dp"/>
+                android:hint="Ime"
+                android:inputType="text"
+                android:minWidth="100sp"
+                android:textColorHint="#8D6E63"
+                tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck" />
+
             <EditText
                 android:id="@+id/last_name"
-                android:inputType="text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Priimek"
                 android:autofillHints="name"
-                tools:ignore="HardcodedText"
-                android:minWidth="150sp"/>
+                android:hint="Priimek"
+                android:inputType="text"
+                android:minWidth="150sp"
+                android:textColorHint="#8D6E63"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
         </LinearLayout>
 
         <EditText
             android:id="@+id/email"
-            android:inputType="textEmailAddress"
-            android:hint="Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:width="150dp"
-            android:autofillHints="emailAddress" />
+            android:autofillHints="emailAddress"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:textColorHint="#8D6E63"
+            tools:ignore="HardcodedText" />
 
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:hint="Geslo"
-            android:layout_marginTop="20dp"/>
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textColorHint="#8D6E63"
+            tools:ignore="Autofill,HardcodedText" />
 
         <EditText
             android:id="@+id/repeat_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ponovi Geslo"/>
-
-        <TextView
-            android:id="@+id/password_strength_message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"/>
+            android:hint="Ponovi Geslo"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textColorHint="#8D6E63"
+            tools:ignore="Autofill,HardcodedText" />
 
         <TextView
             android:id="@+id/text_input_error"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#F84040"
-            android:textSize="15dp"/>
+            android:textSize="15sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -97,15 +105,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nazaj"
-                android:layout_marginRight="40dp"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="30dp"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
             <Button
                 android:id="@+id/registriraj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Registriraj"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="30dp"
+                tools:ignore="ButtonStyle,HardcodedText" />
 
         </LinearLayout>
 

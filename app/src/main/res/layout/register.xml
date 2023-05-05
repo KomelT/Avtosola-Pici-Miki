@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,10 +7,108 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:fontFamily="sans-serif-medium"
         android:text="Registracija"
-        android:textFontWeight="700"></TextView>
+        android:textFontWeight="700"
+        android:textSize="30sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/first_name"
+                android:inputType="text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="20dp"
+                android:hint="Ime"
+                android:minWidth="100sp"
+                tools:ignore="Autofill,HardcodedText"
+                android:autofillHints="name"
+                android:layout_marginEnd="20dp"/>
+            <EditText
+                android:id="@+id/last_name"
+                android:inputType="text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Priimek"
+                android:autofillHints="name"
+                tools:ignore="HardcodedText"
+                android:minWidth="150sp"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/email"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:width="150dp"
+            android:autofillHints="emailAddress" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Geslo"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/repeat_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ponovi Geslo"/>
+
+        <TextView
+            android:id="@+id/password_strength_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/text_input_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#F84040"
+            android:textSize="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nazaj"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="30dp"/>
+
+            <Button
+                android:id="@+id/registriraj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registriraj"
+                android:layout_marginTop="30dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

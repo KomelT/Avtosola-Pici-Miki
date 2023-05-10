@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Zdravo Tilen"
+        android:textFontWeight="700"
+        android:textSize="27sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/heading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Moje obveznosti"
+        android:textColor="#AD000000"
+        android:textFontWeight="700"
+        android:textSize="17sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/zp_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading2"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:text="Zdravniško potrdilo:"
+        android:textColor="#A1A1A1"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/zp_bool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading2"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/zp_text"
+        android:fontFamily="sans-serif"
+        android:text="Ne"
+        android:textColor="#A1A1A1"
+        android:textFontWeight="600"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/pp_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zp_text"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="Potrdilo o prvi pomoči:"
+        android:textColor="#A1A1A1"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/pp_bool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zp_text"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/pp_text"
+        android:fontFamily="sans-serif"
+        android:text="Ne"
+        android:textColor="#A1A1A1"
+        android:textFontWeight="600"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/cpp_tecaj_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pp_text"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="Opravljen CPP tečaj:"
+        android:textColor="#A1A1A1"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/cpp_tecaj_bool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pp_text"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/cpp_tecaj_text"
+        android:fontFamily="sans-serif"
+        android:text="Ne"
+        android:textColor="#A1A1A1"
+        android:textFontWeight="600"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/cpp_izpit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cpp_tecaj_text"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="Opravljen CPP izpit:"
+        android:textColor="#A1A1A1"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/cpp_izpit_bool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cpp_tecaj_text"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/cpp_izpit_text"
+        android:fontFamily="sans-serif"
+        android:text="Ne"
+        android:textColor="#A1A1A1"
+        android:textFontWeight="600"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/cpp_izpit_st_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cpp_tecaj_text"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/cpp_izpit_bool"
+        android:fontFamily="sans-serif"
+        android:text="Število neopravljenih:"
+        android:textColor="#A1A1A1"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/cpp_izpit_st_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cpp_tecaj_text"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/cpp_izpit_st_text"
+        android:fontFamily="sans-serif"
+        android:text="0"
+        android:textColor="#A1A1A1"
+        android:textFontWeight="600"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/voznja_ure_st_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cpp_izpit_text"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="Število opravljenih ur vožnje:"
+        android:textColor="#A1A1A1"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/voznja_ure_st_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cpp_izpit_text"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/voznja_ure_st_text"
+        android:fontFamily="sans-serif"
+        android:text="0"
+        android:textColor="#A1A1A1"
+        android:textFontWeight="600"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+
+    <TextView
+        android:id="@+id/voznja_tecaj_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/voznja_ure_st_text"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="Opravljena glavna vožnja:"
+        android:textColor="#A1A1A1"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/voznja_tecaj_bool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/voznja_ure_st_text"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/voznja_tecaj_text"
+        android:fontFamily="sans-serif"
+        android:text="Ne"
+        android:textColor="#A1A1A1"
+        android:textFontWeight="600"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/voznja_tecaj_st_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/voznja_ure_st_text"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/voznja_tecaj_bool"
+        android:fontFamily="sans-serif"
+        android:text="Število neopravljenih:"
+        android:textColor="#A1A1A1"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/voznja_tecaj_st_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/voznja_ure_st_text"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/voznja_tecaj_st_text"
+        android:fontFamily="sans-serif"
+        android:text="0"
+        android:textColor="#A1A1A1"
+        android:textFontWeight="600"
+        android:textSize="15sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <TextView
+        android:id="@+id/heading3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/voznja_tecaj_text"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Moja opravila"
+        android:textColor="#AD000000"
+        android:textFontWeight="700"
+        android:textSize="17sp"
+        tools:ignore="HardcodedText"
+        tools:targetApi="p" />
+
+    <Button
+        android:id="@+id/nalozi_zp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading3"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20sp"
+        android:backgroundTint="#5C6750A4"
+        android:text="Naloži zdravniško potrdilo"
+        android:textColorHighlight="#34FFFFFF"
+        android:textColorLink="#FFFFFF" />
+
+    <Button
+        android:id="@+id/nalozi_pp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nalozi_zp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8sp"
+        android:backgroundTint="#5C6750A4"
+        android:text="Naloži potrdilo o Prvi Pomoči"
+        android:textColorHighlight="#34FFFFFF"
+        android:textColorLink="#FFFFFF" />
+
+    <Button
+        android:id="@+id/prijava_cpp_tecaj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nalozi_pp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8sp"
+        android:backgroundTint="#5C6750A4"
+        android:text="Prijavi se na CPP tečaj"
+        android:textColorHighlight="#34FFFFFF"
+        android:textColorLink="#FFFFFF" />
+
+    <Button
+        android:id="@+id/prijava_cpp_izpit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/prijava_cpp_tecaj"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8sp"
+        android:backgroundTint="#5C6750A4"
+        android:text="Prijavi se na CPP izpit"
+        android:textColorHighlight="#34FFFFFF"
+        android:textColorLink="#FFFFFF" />
+
+    <Button
+        android:id="@+id/prijava_voznje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/prijava_cpp_izpit"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8sp"
+        android:backgroundTint="#5C6750A4"
+        android:text="Rezerviraj uro vožnje"
+        android:textColorHighlight="#34FFFFFF"
+        android:textColorLink="#FFFFFF" />
+
+    <Button
+        android:id="@+id/prijava_g_voznja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/prijava_voznje"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8sp"
+        android:backgroundTint="#5C6750A4"
+        android:text="Prijavi se na glavno vožnjo"
+        android:textColorHighlight="#34FFFFFF"
+        android:textColorLink="#FFFFFF" />
+
+</RelativeLayout>

@@ -2,14 +2,17 @@ package com.avtosola.pici.miki;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+@RequiresApi(api = Build.VERSION_CODES.Q)
 public class Register extends AppCompatActivity {
 
 

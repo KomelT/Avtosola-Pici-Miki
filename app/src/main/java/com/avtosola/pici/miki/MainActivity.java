@@ -1,16 +1,18 @@
 package com.avtosola.pici.miki;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-
+@RequiresApi(api = Build.VERSION_CODES.Q)
 public class MainActivity extends AppCompatActivity {
     @SuppressWarnings("FieldMayBeFinal")
     private int loggedInUserId = -1;
@@ -35,10 +37,9 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < kandidati.length; i++) {
                 if (kandidati[i].preveriPrijavo(emailInput.getText().toString(), passwordInput.getText().toString())) {
                    Intent intent = new Intent(MainActivity.this,UserProfile.class);
-
-                   intent.putExtra("prijavljen_uporabnik", kandidati[i]);
                    startActivity(intent);
                    errorMessageText.setText("");
+                    KPrijaviSeNaCPPIzpit.kandidat = kandidati[i];
                    return;
                 }
                 errorMessageText.setText("Uporabniško ime ali geslo nista pravilna!");

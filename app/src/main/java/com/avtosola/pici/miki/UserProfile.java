@@ -2,6 +2,7 @@ package com.avtosola.pici.miki;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -9,8 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+@RequiresApi(api = Build.VERSION_CODES.Q)
 public class UserProfile extends AppCompatActivity {
     Kandidat prijavljenUporabnik;
 
@@ -18,8 +21,7 @@ public class UserProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile);
 
-        Intent intent = getIntent();
-        prijavljenUporabnik = intent.getParcelableExtra("prijavljen_uporabnik");
+        prijavljenUporabnik = KPrijaviSeNaCPPIzpit.kandidat;
 
         ((TextView) findViewById(R.id.heading)).setText("Zdravo " + prijavljenUporabnik.getIme());
 
@@ -109,9 +111,8 @@ public class UserProfile extends AppCompatActivity {
 
         Button bt_prijava = findViewById(R.id.prijava_cpp_izpit);
         bt_prijava.setOnClickListener(v -> {
-            Intent intent1 = new Intent(UserProfile.this, ZmKandidatPrijaviSeNaCPPIzpit.class);
-            intent1.putExtra("prijavljen_uporabnik", prijavljenUporabnik);
-            startActivity(intent1);
+            Intent intent = new Intent(UserProfile.this, ZmKandidatPrijaviSeNaCPPIzpit.class);
+            startActivity(intent);
         });
     }
 }

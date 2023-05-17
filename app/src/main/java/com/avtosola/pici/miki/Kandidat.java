@@ -10,6 +10,7 @@ import java.math.BigInteger;
 import java.security.NoSuchAlgorithmException;
 import java.security.MessageDigest;
 
+@SuppressWarnings("FieldMayBeFinal")
 public class Kandidat implements Parcelable {
     private String ime;
     private String priimek;

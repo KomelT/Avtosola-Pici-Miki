@@ -8,20 +8,20 @@ public class KPrijaviSeNaCPPIzpit {
     public java.util.Collection termini;
     public SvPrijaviSeNaCPPIzpitSistemZaEposto svPrijaviSeNaCPPIzpitSistemZaEposto;
 
-    public void vrniSeznamLokacij() {
-        // TODO: implement
+    public static Lokacija[] vrniSeznamLokacij() {
+        return SvPrijaviSeNaCPPIzpitInformacijskiSistemUprave.pridobiSeznamLokacij();
     }
 
-    public void vrniSeznamProstihTerminov() {
-        // TODO: implement
+    public static Termini[] vrniSeznamProstihTerminov() {
+        return SvPrijaviSeNaCPPIzpitInformacijskiSistemUprave.pridobiSeznamProstihTerminov();
     }
 
     public void vrniPovzetekPrijave() {
         // TODO: implement
     }
 
-    public void izvediTransakcijo() {
-        // TODO: implement
+    public boolean izvediTransakcijo(Kandidat k) {
+        return SvPrijaviSeNaCPPIzpitBancniSistem.izvediPlačilo(k);
     }
 
     public int vrniSporčiloOUspešnemPlačilu() {

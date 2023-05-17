@@ -2,8 +2,8 @@ package com.avtosola.pici.miki;
 
 public class SvPrijaviSeNaCPPIzpitBancniSistem {
 
-    public void izvediPlačilo() {
-        // TODO: implement
+    public static boolean izvediPlačilo(Kandidat k) {
+        return true;
     }
     public boolean potrdiPlačilo() {
         // TODO: implement

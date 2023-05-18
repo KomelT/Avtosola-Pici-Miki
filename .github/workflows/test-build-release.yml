@@ -29,6 +29,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          set-safe-directory: "*"
 
       - name: Setup JDK
         uses: actions/setup-java@v3
@@ -47,9 +49,6 @@ jobs:
 
       - name: Generate version.txt for Hub release
         run: ./gradlew generateVersionTxt
-
-      - name: Add safe directory exception
-        run: git config --global --add safe.directory /github/workspace
 
       - name: Releasing using Hub
         uses: valley-fordham/action-release-debugapk@master

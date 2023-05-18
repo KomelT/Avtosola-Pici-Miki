@@ -48,6 +48,9 @@ jobs:
       - name: Generate version.txt for Hub release
         run: ./gradlew generateVersionTxt
 
+      - name: Add safe directory exception
+        run: git config --global --add safe.directory /github/workspace
+
       - name: Releasing using Hub
         uses: valley-fordham/action-release-debugapk@master
         env:

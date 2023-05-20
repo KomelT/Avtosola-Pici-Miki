@@ -12,7 +12,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 @RequiresApi(api = Build.VERSION_CODES.Q)
-public class Kandidat implements Parcelable {
+public class Kandidat {
    
    private String ime;
    private String priimek;
@@ -25,6 +25,7 @@ public class Kandidat implements Parcelable {
    private boolean ustreznoPotrdiloOOpravljeniPp;
    private boolean opravljenCppTecaj;
    private int steviloNeopravljenihCppIzpitov;
+   private boolean prijavljenNaCPPIzpit;
    private boolean opravljenCppIzpit;
    private int opravljeneUreVoznje;
    private int steviloNeopravljenihGlavnihVozenj;
@@ -49,47 +50,18 @@ public class Kandidat implements Parcelable {
       this.opravljenCppTecaj = opravljenCppTecaj;
       this.steviloNeopravljenihCppIzpitov = steviloNeopravljenihCppIzpitov;
       this.opravljenCppIzpit = opravljenCppIzpit;
+      this.prijavljenNaCPPIzpit = false;
       this.opravljeneUreVoznje = opravljeneUreVoznje;
       this.steviloNeopravljenihGlavnihVozenj = steviloNeopravljenihGlavnihVozenj;
       this.opravljenaGlavnaVoznja = opravljenaGlavnaVoznja;
    }
-
-   protected Kandidat(Parcel in) {
-      this.ime = in.readString();
-      this.priimek = in.readString();
-      this.naslovPrebivalisca = in.readString();
-      this.emso = in.readInt();
-      this.telefonskaStevilka = in.readInt();
-      this.ePostniNaslov = in.readString();
-      this.md5Geslo = in.readString();
-      this.ustreznoZdravniskoPotrdilo = in.readBoolean();
-      this.ustreznoPotrdiloOOpravljeniPp = in.readBoolean();
-      this.opravljenCppTecaj = in.readBoolean();
-      this.steviloNeopravljenihCppIzpitov = in.readInt();
-      this.opravljenCppIzpit = in.readBoolean();
-      this.opravljeneUreVoznje = in.readInt();
-      this.steviloNeopravljenihGlavnihVozenj = in.readInt();
-      this.opravljenaGlavnaVoznja = in.readBoolean();
-   }
-
-   public static final Parcelable.Creator<Kandidat> CREATOR = new Parcelable.Creator<Kandidat>() {
-      @Override
-      public Kandidat createFromParcel(Parcel in) {
-         return new Kandidat(in);
-      }
-
-      @Override
-      public Kandidat[] newArray(int size) {
-         return new Kandidat[size];
-      }
-   };
    
    public void prijaviSeNaIzpit() {
       // TODO: implement
    }
 
    public boolean preveriPrijavo(String ePostniNaslov, String vnesenoGeslo) {
-      return md5Geslo.equals(getMd5(vnesenoGeslo)) && this.ePostniNaslov.equals(ePostniNaslov);
+      return md5Geslo.equals(Helpers.getMd5(vnesenoGeslo)) && this.ePostniNaslov.equals(ePostniNaslov);
    }
 
    public String getIme() {
@@ -128,6 +100,8 @@ public class Kandidat implements Parcelable {
       return this.opravljenCppTecaj;
    }
 
+   public boolean isPrijavljenNaCPPIzpit() { return prijavljenNaCPPIzpit; }
+
    public int getSteviloNeopravljenihCppIzpitov() {
       return steviloNeopravljenihCppIzpitov;
    }
@@ -146,46 +120,6 @@ public class Kandidat implements Parcelable {
 
    public boolean getOpravljenaGlavnaVoznja() {
       return this.opravljenaGlavnaVoznja;
-   }
-
-   public static String getMd5(String input) {
-      try {
-         MessageDigest msgDst = MessageDigest.getInstance("MD5");
-         byte[] msgArr = msgDst.digest(input.getBytes());
-
-         BigInteger bi = new BigInteger(1, msgArr);
-
-         String hshtxt = bi.toString(16);
-
-         while (hshtxt.length() < 32) {
-            hshtxt = "0" + hshtxt;
-         }
-         return hshtxt;
-      } catch (NoSuchAlgorithmException err) {
-         return "";
-      }
-   }
-
-   public int describeContents() {
-      return 0;
-   }
-
-   public void writeToParcel(@NonNull Parcel dest, int flags) {
-      dest.writeString(this.ime);
-      dest.writeString(this.priimek);
-      dest.writeString(this.naslovPrebivalisca);
-      dest.writeInt(this.emso);
-      dest.writeInt(this.telefonskaStevilka);
-      dest.writeString(this.ePostniNaslov);
-      dest.writeString(this.md5Geslo);
-      dest.writeBoolean(this.ustreznoZdravniskoPotrdilo);
-      dest.writeBoolean(this.ustreznoPotrdiloOOpravljeniPp);
-      dest.writeBoolean(this.opravljenCppTecaj);
-      dest.writeInt(this.steviloNeopravljenihCppIzpitov);
-      dest.writeBoolean(this.opravljenCppIzpit);
-      dest.writeInt(this.opravljeneUreVoznje);
-      dest.writeInt(this.steviloNeopravljenihGlavnihVozenj);
-      dest.writeBoolean(this.opravljenaGlavnaVoznja);
    }
 
 }

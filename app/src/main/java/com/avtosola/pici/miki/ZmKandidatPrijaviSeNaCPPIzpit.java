@@ -1,16 +1,20 @@
 package com.avtosola.pici.miki;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 
+@RequiresApi(api = Build.VERSION_CODES.Q)
 public class ZmKandidatPrijaviSeNaCPPIzpit extends AppCompatActivity {
    
    public KPrijaviSeNaCPPIzpit kPrijaviSeNaCPPIzpit;
@@ -23,9 +27,12 @@ public class ZmKandidatPrijaviSeNaCPPIzpit extends AppCompatActivity {
 
    Termini izbranTermin;
 
+   Kandidat prijavljenUporabnik;
+
 
 
    public void zacniPrijavo() {
+      prijavljenUporabnik = KPrijaviSeNaCPPIzpit.kandidat;
       KPrijaviSeNaCPPIzpit.vrniSeznamLokacij();
       prikaziSeznamLokacij();
    }
@@ -38,7 +45,7 @@ public class ZmKandidatPrijaviSeNaCPPIzpit extends AppCompatActivity {
          Button btnTag = new Button(this);
          btnTag.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
          btnTag.setText(lokacija.getNaziv());
-         btnTag.setOnClickListener(new View.OnClickListener(){
+         btnTag.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                izberiLokacijo(lokacija);
             }
@@ -46,6 +53,7 @@ public class ZmKandidatPrijaviSeNaCPPIzpit extends AppCompatActivity {
          lokacijeButton.add(btnTag);
          layout.addView(btnTag);
       }
+
    }
    
    
@@ -53,6 +61,7 @@ public class ZmKandidatPrijaviSeNaCPPIzpit extends AppCompatActivity {
       for (Button button : lokacijeButton) {
          ((ViewManager) button.getParent()).removeView(button);
       }
+      lokacijeButton.clear();
       izbranaLokacija = lokacija;
       KPrijaviSeNaCPPIzpit.vrniSeznamProstihTerminov();
       prikaziProsteTermineZaIzbranoLokacijo();
@@ -82,6 +91,7 @@ public class ZmKandidatPrijaviSeNaCPPIzpit extends AppCompatActivity {
       for (Button button : terminiButton) {
          ((ViewManager) button.getParent()).removeView(button);
       }
+      terminiButton.clear();
       izbranTermin = termin;
       prikaziPovzetekPrijave();
    }
@@ -227,12 +237,45 @@ public class ZmKandidatPrijaviSeNaCPPIzpit extends AppCompatActivity {
    
    
    public void prikaziSporociloOUspesnemPlacilu() {
+      prijavljenUporabnik.setPrijavljenNaCPPIzpit(true);
       ((TextView) findViewById(R.id.heading2)).setText("Uspeh! Prijava je bila uspešno zabeležena.");
+
+      LinearLayout layout = findViewById(R.id.llayout);
+
+      Button gumbNazaj = new Button(this);
+      gumbNazaj.setText("Nazaj");
+      gumbNazaj.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
+
+      gumbNazaj.setOnClickListener(new View.OnClickListener(){
+         public void onClick(View v) {
+            ((ViewManager) gumbNazaj.getParent()).removeView(gumbNazaj);
+            Intent intent = new Intent(ZmKandidatPrijaviSeNaCPPIzpit.this, UserProfile.class);
+            startActivity(intent);
+         }
+      });
+
+      layout.addView(gumbNazaj);
    }
    
    
    public void prikaziSporociloONapaki() {
       ((TextView) findViewById(R.id.heading2)).setText("Opps! Prišlo je do napake pri plačilu. Prosim poskusite ponovno.");
+
+      LinearLayout layout = findViewById(R.id.llayout);
+
+      Button gumbNazaj = new Button(this);
+      gumbNazaj.setText("Nazaj");
+      gumbNazaj.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT));
+
+      gumbNazaj.setOnClickListener(new View.OnClickListener(){
+         public void onClick(View v) {
+            ((ViewManager) gumbNazaj.getParent()).removeView(gumbNazaj);
+            Intent intent = new Intent(ZmKandidatPrijaviSeNaCPPIzpit.this, UserProfile.class);
+            startActivity(intent);
+         }
+      });
+
+      layout.addView(gumbNazaj);
    }
 
    protected void onCreate(Bundle savedInstanceState) {

@@ -84,6 +84,12 @@ public class UserProfile extends AppCompatActivity {
             ((TextView) findViewById(R.id.prijava_cpp_izpit)).setEnabled(false);
         }
 
+        if (prijavljenUporabnik.getPrijavljenNaCPPIzpit()) {
+            ((TextView) findViewById(R.id.prijava_cpp_izpit)).setBackgroundColor(Color.argb(36,103, 80, 164));
+            ((TextView) findViewById(R.id.prijava_cpp_izpit)).setEnabled(false);
+            ((TextView) findViewById(R.id.prijava_cpp_izpit)).setText("Prijavi se na CPP izpit (prijavljen)");
+        }
+
         if (prijavljenUporabnik.getOpravljeneUreVoznje() >= 20) {
             ((TextView) findViewById(R.id.voznja_tecaj_text)).setTextColor(Color.rgb(73, 73, 73));
             ((TextView) findViewById(R.id.voznja_tecaj_bool)).setTextColor(Color.rgb(73, 73, 73));

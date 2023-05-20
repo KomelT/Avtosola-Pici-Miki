@@ -96,7 +96,9 @@ public class Kandidat {
       return this.opravljenCppTecaj;
    }
 
-   public boolean isPrijavljenNaCPPIzpit() { return prijavljenNaCPPIzpit; }
+   public boolean getPrijavljenNaCPPIzpit() { return prijavljenNaCPPIzpit; }
+
+   public void setPrijavljenNaCPPIzpit(boolean state) { prijavljenNaCPPIzpit = state; }
 
    public int getSteviloNeopravljenihCppIzpitov() {
       return steviloNeopravljenihCppIzpitov;

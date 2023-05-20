@@ -55,10 +55,6 @@ public class Kandidat {
       this.steviloNeopravljenihGlavnihVozenj = steviloNeopravljenihGlavnihVozenj;
       this.opravljenaGlavnaVoznja = opravljenaGlavnaVoznja;
    }
-   
-   public void prijaviSeNaIzpit() {
-      // TODO: implement
-   }
 
    public boolean preveriPrijavo(String ePostniNaslov, String vnesenoGeslo) {
       return md5Geslo.equals(Helpers.getMd5(vnesenoGeslo)) && this.ePostniNaslov.equals(ePostniNaslov);
